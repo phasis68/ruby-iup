@@ -1,0 +1,8 @@
+* CHANGES
+* MANIFEST
+* README
+* Rakefile
+* ruby-iup.gemspec
+* ext/extconf.rb
+* ext/iup.c
+* test/test_ruby_iup.rb

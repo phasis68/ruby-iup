@@ -1,0 +1,74 @@
+Building ruby-iup
+====================
+
+Pre-requisites
+--------------
+
+General
+--------------
+* C compiler (not needed for binary install on Windows)
+* ruby 1.8.5+ or ruby 1.9.0+
+* rake
+* rubygems 0.9.1+
+* IUP 3.0+ header and library (not needed for binary install on Windows)
+* CD 5.3+ header and library  (not needed for binary install on Windows)
+* IM 3.6+ header and library  (not needed for binary install on Windows)
+  
+
+Linux
+--------------
+On Ubuntu or Debian systems, aside from Ruby you'll need ruby and
+some extra ruby related packages:
+
+* `ruby rdoc ri ruby1.8-dev`
+
+On older Gentoo, Debian and Ubuntu, rubygems 0.9.0 will be installed by default
+in the packages.  This version of rubygems is INCOMPATIBLE with ruby-iup.
+You'll need to install rubygems 0.9.1+ from source.
+
+On some distributions you may need 'xorg-dev' developer package.
+
+
+
+Build and installation
+--------------
+
+Installing from rubygems
+-------------------
+
+Runnig 'gem install -y ruby-iup' and it should pull down the gem
+and try to build the bindings for you automatically.
+
+For windows there is also pre-built binary windows gem available
+(i386-mswin32) which is compatible with the ruby one-click installer and does not need
+compiler or other mentioned tools installed.
+
+Manual Build instructions for all platforms (see above for platform-specific notes)
+------------------
+1. Make sure you have working ruby with rubygems installed
+	 and (if needed) appropriate developer packages (ruby-dev,ruby1.8-dev,...).
+2. Make sure you have working C compiler
+3. Install rake either from package or by running 'gem install rake'
+4. Run 'rake' at the top level of the project
+
+Installing manually built extensions
+------------------
+1. Run 'rake clean' to clean out the project
+2. Run 'rake gem:create' to create source gem from project
+3. Run 'gem install ruby-iup-(version).gem' to compile and install the gem
+4. Done.
+
+Building binary gem (useful only for binary distribution of the project)
+------------------
+1. Run 'rake clean' to clean out the project
+2. Run 'rake gem:binary' to build source gem
+3. Run 'gem install ruby-iup-(version).gem' to compile the binary gem
+
+
+
+Running programs and examples
+-----------------
+To run a sample file, make sure the ruby-iup gem is installed then:
+
+    $ cd examples
+    $ ruby sample.rb
